@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const candidatoController = require("../controllers/candidatoController");
 const auth = require("../middleware/auth");
+const authGet = require("../middleware/authGet");
 const {check} = require("express-validator");
 
 router.post("/",
@@ -24,7 +25,7 @@ router.post("/",
 
 // Obtener candidatos
 router.get("/",
-    auth,
+    authGet,
     candidatoController.obtenerCandidatosUser
     );
 

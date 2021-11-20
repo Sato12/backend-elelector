@@ -35,8 +35,16 @@ exports.crearCandidato = async(req,res)=>{
 exports.obtenerCandidatosUser = async (req, res)=>{
     try {
         
+        if(!req.usuario){
+
+            const candidatos = await Candidato.find({}).sort({fcreado:-1});
+            res.json({candidatos});
+
+        }else{
+        
         const candidatos = await Candidato.find({creador: req.usuario.id}).sort({fcreado:-1});
         res.json({candidatos});
+        }
 
     } catch (error) {
         console.log(error);
