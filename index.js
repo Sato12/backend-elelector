@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json({ extended: true, limit: "4000kb" }));
 
 // puerto de la app
-const PORT = process.env.PORT || 8080;
+const port = process.env.port || 8080;
 
 // Importar rutas
 app.use("/api/usuarios", require("./routes/usuarios"));
@@ -23,6 +23,6 @@ app.use("/api/candidatos", require("./routes/candidatos"));
 app.use("/api/contacto", require("./routes/contacto"));
 
 // arrancar la app
-app.listen(PORT, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Servidor funcionando en el puerto ${PORT}`);
 });
