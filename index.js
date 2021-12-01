@@ -11,7 +11,7 @@ conectarDB();
 //Habilitar CORS
 app.use(cors());
 // Habilitar expressJSON
-app.use(express.json({ extended: true }));
+app.use(express.json({ extended: true, limit: "4000kb" }));
 
 // puerto de la app
 const PORT = process.env.PORT || 8080;
