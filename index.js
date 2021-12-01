@@ -24,5 +24,5 @@ app.use("/api/contacto", require("./routes/contacto"));
 
 // arrancar la app
 app.listen(port, "0.0.0.0", () => {
-  console.log(`Servidor funcionando en el puerto ${PORT}`);
+  console.log(`Servidor funcionando en el puerto ${port}`);
 });
