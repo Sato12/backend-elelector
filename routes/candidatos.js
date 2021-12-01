@@ -3,6 +3,7 @@ const router = express.Router();
 const candidatoController = require("../controllers/candidatoController");
 const auth = require("../middleware/auth");
 const authGet = require("../middleware/authGet");
+const cors = require("../middleware/cors");
 const { check } = require("express-validator");
 
 router.post(
@@ -25,7 +26,7 @@ router.post(
 );
 
 // Obtener candidatos
-router.get("/", authGet, candidatoController.obtenerCandidatosUser);
+router.get("/", authGet, cors, candidatoController.obtenerCandidatosUser);
 
 // Actualizar candidato via ID
 

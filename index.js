@@ -11,16 +11,6 @@ conectarDB();
 //Habilitar CORS
 app.use(cors());
 //
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://elector-servidor.herokuapp.com/"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-});
 
 // Habilitar expressJSON
 app.use(express.json({ extended: true, limit: "4000kb" }));
