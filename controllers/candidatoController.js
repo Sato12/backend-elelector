@@ -60,6 +60,7 @@ exports.actualizarCandidato = async (req, res) => {
   const { cargos } = req.body;
   const { formacion } = req.body;
   const { logo } = req.body;
+  const { foto } = req.body;
   const { posicion } = req.body;
   const { encuestas } = req.body;
   const { profesion } = req.body;
@@ -102,6 +103,9 @@ exports.actualizarCandidato = async (req, res) => {
   }
   if (sigep) {
     nuevoCandidato.sigep = sigep;
+  }
+  if (foto) {
+    nuevoCandidato.foto = foto;
   }
 
   try {
