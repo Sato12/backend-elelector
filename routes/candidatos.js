@@ -26,7 +26,7 @@ router.post(
 );
 
 // Obtener candidatos
-router.get("/", authGet, cors, candidatoController.obtenerCandidatosUser);
+router.get("/", authGet, candidatoController.obtenerCandidatosUser);
 
 // Actualizar candidato via ID
 
